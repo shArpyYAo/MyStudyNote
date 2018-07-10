@@ -301,19 +301,33 @@ mark[temp[i]] - 1 !== i这个判断条件一是为了避免自己跟自己判断
       
 ##### 思路
 大致思路是先遍历nums2数组，然后用二分法在nums1中寻找插入位置到findIndex数组中
+
 然后遍历findIndex数组。
+
 例如nums1：[1,3,4],nums2：[2],findIndex：[0]
+
 为什么findIndex[0]是零呢，这是因为findIndex记录这nums2在nums1中的插入位置
+
 findIndex[0]表示nums2下标0的数2在nums1中的插入位置是0.
+
 如果nums2为[6]，那么findIndex[0]就是2.
+
 然后findIndex数组的每个数加上他们的下标再加1（我们叫它findNums2InNums3）.刚好是nums1和nums2合并后nums2的数在nums3的下标
+
 这样直接判断nums3的中位数下标是否与findNums2InNums3的其中一个数相等
+
 如果相等，那就是我们要的
+
 如果不等，那意味着中位数存在于nums1中
+
 那就计算nums3中位数下标与findNums2InNums3的其中一个数的最近距离，
+
 通过这个距离算出nums1的数。（具体看代码，不过我猜没人想看也看不懂。。。。）
+
 这个算法时间复杂度为m*log(n)。用时420ms。还是达不到题目的要求。但是还是过了
+
 我的提交执行用时战胜 2.77 % 的 javascript 提交记录，这个结果也是显然的。。。。
+
 
 ##### leetcode上记录的最快解法 --- 2018/7/10 复制
 
